@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suzan Hair Braids – Beautiful Braids for Queens</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── RESET & VARIABLES ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #f4a7b9;
+      --pink-deep:  #e07a97;
+      --pink-light: #fde8ef;
+      --pink-pale:  #fff5f8;
+      --gold:       #c9a84c;
+      --gold-lt:    #e8c97a;
+      --gold-pale:  #fdf7e8;
+      --dark:       #1a0d12;
+      --dark2:      #2d1520;
+      --mid:        #6b3a4a;
+      --white:      #ffffff;
+      --gray:       #f8f0f3;
+      --text:       #3d1e2a;
+      --text-lt:    #7a5360;
+      --ff-d: 'Cormorant Garamond', Georgia, serif;
+      --ff-b: 'Jost', sans-serif;
+      --nav-h: 72px;
+      --r: 4px;
+      --sh: 0 8px 40px rgba(26,13,18,.12);
+      --sh-lg: 0 20px 80px rgba(26,13,18,.2);
+      --tr: .35s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-b); color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .sp { padding: 100px 0; }
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow {
+      font-family: var(--ff-b); font-size: 11px; font-weight: 600;
+      letter-spacing: .25em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 12px; display: block;
+    }
+    .eyebrow.lt { color: var(--gold-lt); }
+
+    .sec-title {
+      font-family: var(--ff-d); font-size: clamp(2.4rem,5vw,3.6rem);
+      font-weight: 600; line-height: 1.1; color: var(--dark); margin-bottom: 20px;
+    }
+    .sec-title.lt { color: var(--white); }
+    .sec-title em { color: var(--pink-deep); font-style: italic; font-weight: 300; }
+    .sec-title.lt em { color: var(--gold-lt); }
+
+    .sec-sub { font-size: 1.05rem; color: var(--text-lt); line-height: 1.7; max-width: 500px; }
+    .sec-hd  { text-align: center; margin-bottom: 60px; }
+    .sec-hd .sec-sub { margin: 0 auto; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--ff-b); font-size: 13px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 2px; border: none; cursor: pointer;
+      transition: var(--tr); position: relative;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+      color: var(--dark); box-shadow: 0 4px 20px rgba(201,168,76,.35);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,.45); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.6); backdrop-filter: blur(4px);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: var(--white); transform: translateY(-2px); }
+    .btn-block { width: 100%; justify-content: center; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: var(--nav-h); transition: background var(--tr), box-shadow var(--tr);
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 2px 24px rgba(26,13,18,.1); backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; }
+    .logo-crown { font-size: 20px; color: var(--gold-lt); line-height: 1; filter: drop-shadow(0 0 6px rgba(201,168,76,.5)); }
+    #navbar.scrolled .logo-crown { color: var(--gold); }
+    .logo-text {
+      font-family: var(--ff-d); font-size: 1.3rem; font-weight: 600;
+      color: var(--white); letter-spacing: .02em; transition: color var(--tr);
+    }
+    #navbar.scrolled .logo-text { color: var(--dark); }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-link {
+      font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+      padding: 8px 14px; border-radius: 2px; color: rgba(255,255,255,.85);
+      transition: color var(--tr); position: relative;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px;
+      height: 1.5px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--tr);
+    }
+    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+    .nav-link:hover { color: var(--gold-lt); }
+    #navbar.scrolled .nav-link { color: var(--dark); }
+    #navbar.scrolled .nav-link:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: 10px 22px; background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+      color: var(--dark); border-radius: 2px; margin-left: 10px;
+      transition: var(--tr); box-shadow: 0 2px 12px rgba(201,168,76,.3);
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,.4); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--tr); }
+    #navbar.scrolled .hamburger span { background: var(--dark); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 100dvh; min-height: 700px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+      transform: scale(1.06);
+      animation: heroZoom 12s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,13,18,.82) 0%, rgba(45,21,32,.58) 50%, rgba(26,13,18,.48) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; padding: 0 24px;
+      max-width: 1180px; margin: 0 auto; width: 100%;
+      padding-top: var(--nav-h);
+    }
+    .hero-eyebrow {
+      font-family: var(--ff-b); font-size: 11px; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--gold-lt); margin-bottom: 16px; display: block;
+    }
+    .hero-title {
+      font-family: var(--ff-d); font-size: clamp(3.5rem,9vw,7.5rem);
+      font-weight: 600; line-height: .95; color: var(--white); margin-bottom: 20px;
+    }
+    .hero-title em { font-style: italic; font-weight: 300; color: var(--pink); }
+    .hero-tagline {
+      font-family: var(--ff-d); font-size: clamp(1.1rem,2.5vw,1.5rem);
+      font-weight: 300; font-style: italic; color: var(--gold-lt);
+      margin-bottom: 20px; letter-spacing: .05em;
+    }
+    .hero-desc {
+      font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.75);
+      max-width: 520px; margin-bottom: 40px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute; bottom: 40px; right: 40px; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      color: rgba(255,255,255,.5); font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+      animation: scPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes scPulse { 0%,100% { opacity:.5; transform:scaleY(1); } 50% { opacity:1; transform:scaleY(1.15); } }
+
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      background: linear-gradient(135deg, var(--dark), var(--dark2));
+      overflow: hidden; padding: 14px 0;
+      border-top: 1px solid rgba(201,168,76,.15);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+    }
+    .marquee-track {
+      display: flex; white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--ff-d); font-size: 1.05rem;
+      color: var(--gold-lt); letter-spacing: .08em; padding: 0 40px;
+    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SERVICES ── */
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+    .svc-card {
+      background: var(--white); border-radius: var(--r); overflow: hidden;
+      border: 1px solid rgba(244,167,185,.2); transition: var(--tr);
+      box-shadow: 0 2px 16px rgba(26,13,18,.05);
+    }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); border-color: rgba(201,168,76,.3); }
+
+    .svc-img { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .svc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .svc-card:hover .svc-img img { transform: scale(1.07); }
+
+    .svc-badge {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--pink-deep); color: var(--white);
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 2px;
+    }
+    .svc-badge.gold { background: linear-gradient(135deg,var(--gold),var(--gold-lt)); color: var(--dark); }
+
+    .svc-body { padding: 24px; }
+    .svc-icon { font-size: 20px; color: var(--gold); margin-bottom: 10px; display: block; }
+    .svc-body h3 { font-family: var(--ff-d); font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
+    .svc-body p  { font-size: .92rem; color: var(--text-lt); line-height: 1.7; margin-bottom: 16px; }
+    .svc-link {
+      font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--pink-deep); transition: color var(--tr), gap var(--tr);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .svc-link:hover { color: var(--gold); gap: 10px; }
+
+    .svc-card.cta-card {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+      border-color: rgba(201,168,76,.2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cta-inner { padding: 40px 28px; text-align: center; }
+    .cta-crown {
+      font-size: 2.5rem; color: var(--gold); display: block; margin-bottom: 16px;
+      animation: floatY 3s ease-in-out infinite;
+    }
+    @keyframes floatY { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+    .cta-inner h3 { font-family: var(--ff-d); font-size: 1.8rem; font-weight: 600; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+    .cta-inner p  { font-size: .92rem; color: rgba(255,255,255,.6); margin-bottom: 24px; line-height: 1.6; }
+
+    /* ── GALLERY ── */
+    .gallery { background: var(--pink-pale); }
+    .gal-filter { display: flex; gap: 8px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .fil-btn {
+      font-family: var(--ff-b); font-size: 12px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 10px 24px; border: 1.5px solid rgba(224,122,151,.3);
+      background: transparent; color: var(--text-lt); border-radius: 2px; cursor: pointer; transition: var(--tr);
+    }
+    .fil-btn:hover, .fil-btn.active { background: var(--pink-deep); color: var(--white); border-color: var(--pink-deep); }
+
+    .gal-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      grid-auto-rows: 260px; gap: 12px;
+    }
+    .gal-item { position: relative; overflow: hidden; border-radius: var(--r); cursor: pointer; }
+    .gal-item.tall { grid-row: span 2; }
+    .gal-item.wide { grid-column: span 2; }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .gal-item:hover img { transform: scale(1.07); }
+    .gal-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,13,18,.7) 0%, transparent 60%);
+      opacity: 0; transition: opacity var(--tr);
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+    .gal-overlay span { font-family: var(--ff-d); font-size: 1.1rem; font-style: italic; color: var(--white); font-weight: 300; }
+    .gal-item.hidden { display: none; }
+
+    /* ── BOOKING ── */
+    .booking { position: relative; overflow: hidden; }
+    .bk-bg { position: absolute; inset: 0; }
+    .bk-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .bk-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,13,18,.93) 0%, rgba(45,21,32,.88) 100%); }
+    .bk-wrap {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start;
+    }
+    .bk-left .sec-title { margin-bottom: 16px; }
+    .bk-desc { color: rgba(255,255,255,.65); font-size: .97rem; line-height: 1.75; margin-bottom: 36px; }
+    .bk-info { display: flex; flex-direction: column; gap: 20px; }
+    .bk-info-item { display: flex; align-items: flex-start; gap: 16px; }
+    .bk-info-item i { font-size: 18px; color: var(--gold-lt); margin-top: 2px; flex-shrink: 0; }
+    .bk-info-item strong { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 3px; }
+    .bk-info-item span { font-size: .92rem; color: rgba(255,255,255,.6); }
+
+    .bk-form-wrap { background: var(--white); border-radius: 4px; padding: 44px 40px; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+    .bk-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group.full { grid-column: 1/-1; }
+    label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-lt); }
+    input, select, textarea {
+      font-family: var(--ff-b); font-size: 14px; color: var(--text);
+      background: var(--pink-pale); border: 1.5px solid rgba(244,167,185,.3);
+      border-radius: 2px; padding: 13px 16px; outline: none;
+      transition: border-color var(--tr), box-shadow var(--tr); width: 100%;
+      -webkit-appearance: none; appearance: none;
+    }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 40px; cursor: pointer;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,.12); background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+
+    .success-msg { display: none; text-align: center; padding: 40px 20px; }
+    .success-msg.show { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .success-icon { font-size: 3rem; color: var(--gold); animation: floatY 3s ease-in-out infinite; }
+    .success-msg h3 { font-family: var(--ff-d); font-size: 2rem; color: var(--dark); font-weight: 600; }
+    .success-msg p  { color: var(--text-lt); font-size: .97rem; line-height: 1.6; margin-bottom: 8px; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--white); }
+    .ct-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-bottom: 60px; }
+    .ct-card {
+      text-align: center; padding: 36px 24px;
+      background: var(--pink-pale); border-radius: var(--r);
+      border: 1px solid rgba(244,167,185,.2); transition: var(--tr);
+    }
+    .ct-card:hover { transform: translateY(-4px); box-shadow: var(--sh); border-color: rgba(201,168,76,.3); }
+    .ct-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px; color: var(--dark); font-size: 18px;
+    }
+    .ct-card h4 { font-family: var(--ff-d); font-size: 1.15rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+    .ct-card p  { font-size: .9rem; color: var(--text-lt); line-height: 1.65; }
+    .ct-card a  { color: var(--pink-deep); transition: color var(--tr); }
+    .ct-card a:hover { color: var(--gold); }
+
+    .social-strip { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .social-strip p { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-lt); }
+    .soc-links { display: flex; gap: 14px; }
+    .soc-link {
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1.5px solid rgba(224,122,151,.3);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--pink-deep); font-size: 16px; transition: var(--tr);
+    }
+    .soc-link:hover { background: var(--pink-deep); color: var(--white); border-color: var(--pink-deep); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(224,122,151,.35); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--dark); padding: 36px 0; border-top: 1px solid rgba(201,168,76,.15); }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .foot-logo { display: flex; align-items: center; gap: 8px; font-family: var(--ff-d); font-size: 1.1rem; color: var(--white); }
+    .foot-logo .lc { color: var(--gold); font-size: 18px; }
+    .foot-copy { font-size: .8rem; color: rgba(255,255,255,.35); text-align: center; }
+    .foot-links { display: flex; gap: 24px; }
+    .foot-links a { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); transition: color var(--tr); }
+    .foot-links a:hover { color: var(--gold-lt); }
+
+    /* ── WHATSAPP FAB ── */
+    .wa-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 500;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; color: var(--white); font-size: 26px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 30px rgba(37,211,102,.4); transition: var(--tr);
+    }
+    .wa-fab:hover { transform: scale(1.12) translateY(-3px); box-shadow: 0 10px 40px rgba(37,211,102,.5); }
+    .fab-tip {
+      position: absolute; right: 70px; background: var(--dark); color: var(--white);
+      font-size: 12px; font-family: var(--ff-b); white-space: nowrap;
+      padding: 8px 14px; border-radius: 3px;
+      opacity: 0; pointer-events: none; transition: opacity var(--tr);
+    }
+    .fab-tip::after {
+      content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
+      border: 6px solid transparent; border-right: none; border-left-color: var(--dark);
+    }
+    .wa-fab:hover .fab-tip { opacity: 1; }
+
+
+    /* ── STATS STRIP ── */
+    .stats-strip { background: var(--pink-pale); border-bottom: 1px solid rgba(244,167,185,.25); }
+    .stats-inner {
+      max-width: 1180px; margin: 0 auto; padding: 40px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; padding: 10px 40px; flex: 1; min-width: 140px; }
+    .stat-num {
+      font-family: var(--ff-d); font-size: 3rem; font-weight: 700;
+      color: var(--dark); display: block; line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--text-lt); display: block; margin-top: 6px;
+    }
+    .stat-divider { font-size: 1.2rem; color: var(--gold); opacity: .5; flex-shrink: 0; }
+    @media (max-width: 600px) { .stat-divider { display: none; } .stat-item { min-width: 120px; padding: 10px 20px; } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeIn  { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+    @keyframes shake   { 0%,100%{transform:translateX(0);}20%{transform:translateX(-8px);}40%{transform:translateX(8px);}60%{transform:translateX(-5px);}80%{transform:translateX(5px);} }
+    @keyframes toastIn  { from { opacity:0; transform:translateX(-50%) translateY(12px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+    @keyframes toastOut { from { opacity:1; transform:translateX(-50%) translateY(0); } to { opacity:0; transform:translateX(-50%) translateY(12px); } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .ct-grid { grid-template-columns: repeat(2,1fr); }
+      .bk-wrap { gap: 40px; }
+    }
+    @media (max-width: 900px) {
+      .gal-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 220px; }
+      .gal-item.wide { grid-column: span 2; }
+    }
+    @media (max-width: 768px) {
+      :root { --nav-h: 64px; }
+      .sp { padding: 70px 0; }
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed; top: var(--nav-h); left: 0; right: 0;
+        background: var(--white); flex-direction: column;
+        padding: 20px 24px 28px; gap: 4px;
+        box-shadow: 0 10px 40px rgba(26,13,18,.12);
+        transform: translateY(-110%); transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+        opacity: 0; pointer-events: none;
+      }
+      .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+      .nav-link, #navbar:not(.scrolled) .nav-link {
+        color: var(--dark); padding: 12px 0; font-size: 14px;
+        border-bottom: 1px solid rgba(244,167,185,.15); width: 100%;
+      }
+      .nav-cta { margin-left: 0; margin-top: 8px; width: 100%; text-align: center; display: block; padding: 14px; }
+      .hero-content { padding: 0 20px; padding-top: var(--nav-h); }
+      .hero-scroll { display: none; }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .hero-btns .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .services-grid { grid-template-columns: 1fr; gap: 16px; }
+      .gal-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 180px; }
+      .gal-item.tall { grid-row: span 1; }
+      .bk-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .bk-form-wrap { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .ct-grid { grid-template-columns: repeat(2,1fr); }
+      .foot-inner { flex-direction: column; text-align: center; }
+      .foot-links { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .gal-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .gal-item.wide { grid-column: span 1; }
+      .ct-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-crown">♛</span>
+        <span class="logo-text">Suzan Hair Braids</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"     class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+        <li><a href="#booking"  class="nav-link">Book</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="#booking"  class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/stitch-braids-hero-scaled-1-1140x850.jpg" alt="Braided hairstyle" class="hero-img"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content reveal">
+      <span class="hero-eyebrow">Welcome to</span>
+      <h1 class="hero-title">Suzan Hair<br /><em>Braids</em></h1>
+      <p class="hero-tagline">Beautiful Braids for Queens</p>
+      <p class="hero-desc">Where every strand tells your story. Expert braiding crafted with love, precision, and regal style — because you deserve nothing less than a crown.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-gold">Book Appointment</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MARQUEE ═══════════ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>♛ Box Braids</span><span>✦ Knotless Braids</span><span>♛ Cornrows</span><span>✦ Goddess Braids</span><span>♛ Kids Braids</span><span>✦ Feed-In Braids</span>
+      <span>♛ Box Braids</span><span>✦ Knotless Braids</span><span>♛ Cornrows</span><span>✦ Goddess Braids</span><span>♛ Kids Braids</span><span>✦ Feed-In Braids</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ STATS STRIP ═══════════ -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num"><span class="counter" data-target="500" data-suffix="+">0+</span></span>
+        <span class="stat-label">Happy Queens</span>
+      </div>
+      <div class="stat-divider">♛</div>
+      <div class="stat-item">
+        <span class="stat-num"><span class="counter" data-target="8" data-suffix="+">0+</span></span>
+        <span class="stat-label">Braid Styles</span>
+      </div>
+      <div class="stat-divider">♛</div>
+      <div class="stat-item">
+        <span class="stat-num"><span class="counter" data-target="10" data-suffix=" yrs">0 yrs</span></span>
+        <span class="stat-label">Experience</span>
+      </div>
+      <div class="stat-divider">♛</div>
+      <div class="stat-item">
+        <span class="stat-num"><span class="counter" data-target="100" data-suffix="%">0%</span></span>
+        <span class="stat-label">Satisfaction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section id="services" class="services sp">
+    <div class="container">
+      <div class="sec-hd reveal">
+        <span class="eyebrow">What We Offer</span>
+        <h2 class="sec-title">Our <em>Signature</em> Services</h2>
+        <p class="sec-sub">Every style is crafted with care, precision, and a touch of royal magic.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/02-box-braids.jpg" alt="Box Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+            <span class="svc-badge">Most Popular</span>
+          </div>
+          <div class="svc-body">
+            <span class="svc-icon">◈</span>
+            <h3>Box Braids</h3>
+            <p>Classic, protective, and endlessly versatile. Our box braids are neat, long-lasting, and styled to frame your face beautifully.</p>
+            <a href="#booking" class="svc-link">Book Now →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/04-senegalese-twists.jpg" alt="Knotless Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          </div>
+          <div class="svc-body">
+            <span class="svc-icon">◈</span>
+            <h3>Knotless Braids</h3>
+            <p>Lighter on your scalp, heavier on style. Knotless braids offer a natural look with less tension, perfect for sensitive scalps.</p>
+            <a href="#booking" class="svc-link">Book Now →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/cornrow-braids.jpg" alt="Cornrows"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          </div>
+          <div class="svc-body">
+            <span class="svc-icon">◈</span>
+            <h3>Cornrows</h3>
+            <p>Timeless and sleek. Whether straight back or geometric designs, our cornrows are braided close to the scalp with expert precision.</p>
+            <a href="#booking" class="svc-link">Book Now →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/05-nubian-twists.jpg" alt="Goddess Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+            <span class="svc-badge gold">Premium</span>
+          </div>
+          <div class="svc-body">
+            <span class="svc-icon">◈</span>
+            <h3>Goddess Braids</h3>
+            <p>Bold, beautiful, and breathtaking. Goddess braids are thick, dramatic, and styled to command every room you enter.</p>
+            <a href="#booking" class="svc-link">Book Now →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-img">
+            <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/06-micro-braids.jpg" alt="Kids Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          </div>
+          <div class="svc-body">
+            <span class="svc-icon">◈</span>
+            <h3>Kids Braids</h3>
+            <p>Gentle, fun, and safe for little queens. We specialize in kid-friendly styles that are cute, manageable, and long-lasting.</p>
+            <a href="#booking" class="svc-link">Book Now →</a>
+          </div>
+        </div>
+
+        <div class="svc-card cta-card reveal">
+          <div class="cta-inner">
+            <span class="cta-crown">♛</span>
+            <h3>Don't See<br/>Your Style?</h3>
+            <p>We do many more styles. Reach out and let's create your dream look together.</p>
+            <a href="#contact" class="btn btn-gold">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ GALLERY ═══════════ -->
+  <section id="gallery" class="gallery sp">
+    <div class="container">
+      <div class="sec-hd reveal">
+        <span class="eyebrow">Our Work</span>
+        <h2 class="sec-title">The <em>Royal</em> Gallery</h2>
+        <p class="sec-sub">Every photo tells a story of beauty, artistry, and confidence.</p>
+      </div>
+      <div class="gal-filter reveal">
+        <button class="fil-btn active" data-filter="all">All</button>
+        <button class="fil-btn" data-filter="braids">Braids</button>
+        <button class="fil-btn" data-filter="cornrows">Cornrows</button>
+        <button class="fil-btn" data-filter="goddess">Goddess</button>
+      </div>
+      <div class="gal-grid">
+        <div class="gal-item reveal" data-cat="braids">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/03-triangle-box-braids.jpg" alt="Box Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Box Braids</span></div>
+        </div>
+        <div class="gal-item tall reveal" data-cat="goddess">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/flat-twist-braids.jpg" alt="Goddess braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Goddess Braids</span></div>
+        </div>
+        <div class="gal-item reveal" data-cat="cornrows">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/cornrow-braids.jpg" alt="Cornrows"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Cornrows</span></div>
+        </div>
+        <div class="gal-item reveal" data-cat="braids">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/02-box-braids.jpg" alt="Knotless Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Knotless Braids</span></div>
+        </div>
+        <div class="gal-item wide reveal" data-cat="braids">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/07-fulani-braids.jpg" alt="Long Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Long Braids</span></div>
+        </div>
+        <div class="gal-item reveal" data-cat="goddess">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/05-nubian-twists.jpg" alt="Goddess Updo"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Goddess Updo</span></div>
+        </div>
+        <div class="gal-item reveal" data-cat="braids">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/06-micro-braids.jpg" alt="Kids Braids"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Kids Braids</span></div>
+        </div>
+        <div class="gal-item reveal" data-cat="cornrows">
+          <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/02-box-braids.jpg" alt="Styled Cornrows"  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+          <div class="gal-overlay"><span>Styled Cornrows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ BOOKING ═══════════ -->
+  <section id="booking" class="booking sp">
+    <div class="bk-bg">
+      <img src="https://www.styleseat.com/blog/wp-content/uploads/2022/05/05-nubian-twists.jpg" alt=""  onerror="this.style.background='linear-gradient(135deg,#f4a7b9,#c9a84c)';this.style.opacity='0.7'" />
+      <div class="bk-overlay"></div>
+    </div>
+    <div class="container bk-wrap">
+      <div class="bk-left reveal">
+        <span class="eyebrow lt">Reserve Your Seat</span>
+        <h2 class="sec-title lt">Book Your<br/><em>Royal</em> Appointment</h2>
+        <p class="bk-desc">Ready to wear your crown? Fill in the form and we'll confirm your appointment within 24 hours. Walk-ins welcome based on availability.</p>
+        <div class="bk-info">
+          <div class="bk-info-item">
+            <i class="fa-regular fa-clock"></i>
+            <div><strong>Hours</strong><span>Mon–Sat: 9am – 7pm</span></div>
+          </div>
+          <div class="bk-info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div><strong>Call / WhatsApp</strong><span>+1 (555) 234-5678</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bk-form-wrap reveal">
+        <form id="bookingForm" class="bk-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="style">Hairstyle</label>
+              <select id="style" required>
+                <option value="" disabled selected>Select a style</option>
+                <option>Box Braids</option>
+                <option>Knotless Braids</option>
+                <option>Cornrows</option>
+                <option>Goddess Braids</option>
+                <option>Kids Braids</option>
+                <option>Other / Consult</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" rows="4" placeholder="Any special requests, hair length details, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">
+            <span id="btnText">Confirm Booking</span>
+            <span id="btnIcon">♛</span>
+          </button>
+        </form>
+        <div class="success-msg" id="successMsg">
+          <div class="success-icon">♛</div>
+          <h3>Booking Received!</h3>
+          <p>Thank you, Queen! We'll confirm your appointment within 24 hours. See you soon!</p>
+          <button class="btn btn-gold" id="resetBtn">Book Another</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact" class="contact sp">
+    <div class="container">
+      <div class="sec-hd reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="sec-title">Find <em>Us</em></h2>
+      </div>
+      <div class="ct-grid">
+        <div class="ct-card reveal">
+          <div class="ct-icon"><i class="fa-solid fa-phone"></i></div>
+          <h4>Phone</h4>
+          <p><a href="tel:+15552345678">+1 (555) 234-5678</a></p>
+        </div>
+        <div class="ct-card reveal">
+          <div class="ct-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h4>Email</h4>
+          <p><a href="/cdn-cgi/l/email-protection#b8d0ddd4d4d7f8cad7c1d9d4dbcad7cfd6dacad9d1dccb96dbd7d5"><span class="__cf_email__" data-cfemail="432b262f2f2c03312c3a222f20312c342d2131222a27306d202c2e">[email&#160;protected]</span></a></p>
+        </div>
+        <div class="ct-card reveal">
+          <div class="ct-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h4>Address</h4>
+          <p>142 Crown Avenue<br/>Atlanta, GA 30303</p>
+        </div>
+        <div class="ct-card reveal">
+          <div class="ct-icon"><i class="fa-regular fa-clock"></i></div>
+          <h4>Hours</h4>
+          <p>Mon–Sat: 9am – 7pm<br/>Sunday: 11am – 5pm</p>
+        </div>
+      </div>
+      <div class="social-strip reveal">
+        <p>Follow our journey</p>
+        <div class="soc-links">
+          <a href="#" class="soc-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="soc-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="soc-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="soc-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container foot-inner">
+      <div class="foot-logo"><span class="lc">♛</span><span>Suzan Hair Braids</span></div>
+      <p class="foot-copy">© 2025 Suzan Hair Braids. All rights reserved. Made with ♥ for Queens.</p>
+      <div class="foot-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/15552345678?text=Hi%2C%20I%27d%20like%20to%20book%20at%20Suzan%20Hair%20Braids!" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="fab-tip">Book via WhatsApp</span>
+  </a>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── NAVBAR ──
+    const navbar = document.getElementById('navbar');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+      navLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + cur); });
+    }, { passive: true });
+
+    // ── HAMBURGER ──
+    const ham = document.getElementById('hamburger');
+    const nav = document.getElementById('navLinks');
+    ham.addEventListener('click', () => { ham.classList.toggle('open'); nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); nav.classList.remove('open'); }));
+
+    // ── REVEAL ON SCROLL ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const siblings = e.target.parentElement.querySelectorAll('.reveal:not(.visible)');
+          siblings.forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 90));
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── GALLERY FILTER ──
+    document.querySelectorAll('.fil-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.fil-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.gal-item').forEach(item => {
+          item.classList.toggle('hidden', f !== 'all' && item.dataset.cat !== f);
+        });
+      });
+    });
+
+    // ── DATE MIN ──
+    const dateEl = document.getElementById('date');
+    if (dateEl) dateEl.min = new Date().toISOString().split('T')[0];
+
+    // ── BOOKING FORM ──
+    const form    = document.getElementById('bookingForm');
+    const success = document.getElementById('successMsg');
+    const btnTxt  = document.getElementById('btnText');
+    const btnIco  = document.getElementById('btnIcon');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const n = document.getElementById('name').value.trim();
+      const p = document.getElementById('phone').value.trim();
+      const s = document.getElementById('style').value;
+      const d = document.getElementById('date').value;
+      if (!n || !p || !s || !d) {
+        form.style.animation = 'shake .4s ease';
+        setTimeout(() => form.style.animation = '', 400);
+        showToast('Please fill in all required fields ✦');
+        return;
+      }
+      btnTxt.textContent = 'Confirming...';
+      btnIco.textContent = '⟳';
+      form.querySelector('[type=submit]').disabled = true;
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.classList.add('show');
+      }, 1200);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      success.classList.remove('show');
+      form.style.display = '';
+      form.reset();
+      btnTxt.textContent = 'Confirm Booking';
+      btnIco.textContent = '♛';
+      form.querySelector('[type=submit]').disabled = false;
+    });
+
+    // ── LABEL GOLD ON FOCUS ──
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('focus',  () => { const lb = el.closest('.form-group')?.querySelector('label'); if(lb) lb.style.color = '#c9a84c'; });
+      el.addEventListener('blur',   () => { const lb = el.closest('.form-group')?.querySelector('label'); if(lb) lb.style.color = ''; });
+    });
+
+    // ── TOAST ──
+    function showToast(msg) {
+      document.querySelector('.toast')?.remove();
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.textContent = msg;
+      Object.assign(t.style, {
+        position:'fixed', bottom:'100px', left:'50%', transform:'translateX(-50%)',
+        background:'#1a0d12', color:'#fff', fontFamily:"'Jost',sans-serif",
+        fontSize:'13px', padding:'14px 28px', borderRadius:'3px', zIndex:'9999',
+        whiteSpace:'nowrap', animation:'toastIn .3s ease forwards',
+        borderLeft:'3px solid #c9a84c', boxShadow:'0 8px 30px rgba(0,0,0,.3)'
+      });
+      document.body.appendChild(t);
+      setTimeout(() => { t.style.animation='toastOut .3s ease forwards'; setTimeout(()=>t.remove(),300); }, 3000);
+    }
+
+    // ── SMOOTH SCROLL ──
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' }); }
+      });
+    });
+
+    // ── HERO PARALLAX ──
+    const heroImg = document.querySelector('.hero-img');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        if (scrollY < innerHeight) heroImg.style.transform = `scale(1.06) translateY(${scrollY * 0.15}px)`;
+      }, { passive: true });
+    }
+
+    // ── COUNTER ANIMATION (stats strip) ──
+    function animateCount(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current) + (el.dataset.suffix || '');
+      }, 16);
+    }
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterObserver.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+  </script>
+</body>
+</html>
